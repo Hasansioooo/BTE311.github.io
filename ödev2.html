@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Tüm Lab Görevleri - Tek Dosya CSS (Güncellenmiş)</title>
+    
+    <style>
+        /* ============================================== */
+        /* FUTBOLCU TABLOLARI İÇİN CSS STİLLERİ */
+        /* ============================================== */
+        
+        /* Genel Tablo Stili (Internal ve External Kopyalar için Ortak Özellikler) */
+        .internal-table, .external-table {
+            width: 70%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* Internal Futbolcu Tablosu Stilleri */
+        .internal-table {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .internal-table th, .internal-table td {
+            border: 1px solid #dee2e6;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        .internal-table thead th {
+            background-color: #007bff;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .internal-table tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .internal-table tbody tr:hover {
+            background-color: #e9ecef;
+            cursor: pointer;
+        }
+
+        .internal-table .gol-sayisi {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* External Futbolcu Tablosu Stilleri */
+        .external-table {
+            font-family: 'Times New Roman', Times, serif; 
+            box-shadow: 0 8px 16px rgba(13, 202, 240, 0.4); 
+        }
+
+        .external-table th, .external-table td {
+            border: 1px solid #1499cc;
+            padding: 10px 15px;
+            text-align: left;
+        }
+
+        .external-table thead th {
+            background-color: #0d6efd;
+            color: #ccf2ff; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .external-table tbody tr:nth-child(odd) { 
+            background-color: #eaf8ff;
+        }
+
+        .external-table tbody tr:hover {
+            background-color: #bee2f3;
+            cursor: grab;
+        }
+
+        .external-table .external-gol-sayisi {
+            text-align: center;
+            font-weight: 900; 
+            color: #dc3545; 
+        }
+        
+        /* ============================================== */
+        /* ÇEMBERLER İÇİN CSS STİLLERİ */
+        /* ============================================== */
+        .circle-container {
+            position: relative;
+            width: 300px;
+            height: 250px;
+            margin: 50px auto;
+        }
+
+        .circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            position: absolute;
+            opacity: 0.7; /* Çakışma bölgelerinin görünmesi için şeffaflık */
+        }
+
+        .circle-red {
+            background-color: #f06292; /* Kırmızımsı */
+            top: 0;
+            left: 75px;
+            z-index: 1; 
+        }
+
+        .circle-yellow {
+            background-color: #ffeb3b; /* Sarımsı */
+            top: 75px;
+            left: 150px;
+            z-index: 2; /* En üstte olmasını sağlar */
+        }
+
+        .circle-blue {
+            background-color: #4fc3f7; /* Mavimsi */
+            top: 75px;
+            left: 0;
+            z-index: 0; /* En altta olmasını sağlar */
+        }
+        
+    </style>
+</head>
+<body>
+
+    <h1>LAB GÖREVİ - Tüm Görevler Tek Dosyada</h1>
+    
+    <hr>
+    
+    <h2>Görev 1.1 - Inline CSS Tablo (Futbolcular)</h2>
+    <table style="width: 70%; margin: 20px auto; border-collapse: collapse; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <thead>
+            <tr style="background-color: #007bff; color: white; text-transform: uppercase;">
+                <th style="border: 1px solid #dee2e6; padding: 12px 15px; text-align: left;">Sıra</th>
+                <th style="border: 1px solid #dee2e6; padding: 12px 15px; text-align: left;">Futbolcu Adı</th>
+                <th style="border: 1px solid #dee2e6; padding: 12px 15px; text-align: left;">Takım</th>
+                <th style="border: 1px solid #dee2e6; padding: 12px 15px; text-align: left;">Pozisyon</th>
+                <th style="border: 1px solid #dee2e6; padding: 12px 15px; text-align: center;">Gol Sayısı</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="border: 1px solid #dee2e6; padding: 12px 15px; text-align: left;">1</td>
+                <td style="border: 1px solid #dee2e6; padding: 12px 15px; text-align: left;">Lionel Messi</td>
+                <td style="border: 1px solid #dee2e6; padding: 12px 15px; text-align: left;">Inter Miami</td>
+                <td style="border: 1px solid #dee2e6; padding: 12px 15px; text-align: left;">Forvet</td>
+                <td style="border: 1px solid #dee2e6; padding: 12px 15px; text-align: center; font-weight: bold;">8</td>
+            </tr>
+            <tr style="background-color: #f8f9fa;">
+                <td style="border: 1px solid #dee2e6; padding: 12px 15px; text-align: left;">2</td>
+                <td style="border: 1px solid #dee2e6; padding: 12px 15px; text-align: left;">Kylian Mbappé</td>
+                <td style="border: 1px solid #dee2e6; padding: 12px 15px; text-align: left;">Paris SG</td>
+                <td style="border: 1px solid #dee2e6; padding: 12px 15px; text-align: left;">Forvet</td>
+                <td style="border: 1px solid #dee2e6; padding: 12px 15px; text-align: center; font-weight: bold;">12</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #dee2e6; padding: 12px 15px; text-align: left;">3</td>
+                <td style="border: 1px solid #dee2e6; padding: 12px 15px; text-align: left;">Erling Haaland</td>
+                <td style="border: 1px solid #dee2e6; padding: 12px 15px; text-align: left;">Manchester City</td>
+                <td style="border: 1px solid #dee2e6; padding: 12px 15px; text-align: left;">Forvet</td>
+                <td style="border: 1px solid #dee2e6; padding: 12px 15px; text-align: center; font-weight: bold;">15</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h2>Görev 1.2 - Internal CSS Tablo (Futbolcular)</h2>
+    <table class="internal-table">
+        <thead>
+            <tr>
+                <th>Sıra</th>
+                <th>Futbolcu Adı</th>
+                <th>Takım</th>
+                <th>Pozisyon</th>
+                <th>Gol Sayısı</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>4</td>
+                <td>Mohamed Salah</td>
+                <td>Liverpool</td>
+                <td>Kanat</td>
+                <td class="gol-sayisi">7</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Kevin De Bruyne</td>
+                <td>Manchester City</td>
+                <td>Orta Saha</td>
+                <td class="gol-sayisi">3</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Robert Lewandowski</td>
+                <td>Barcelona</td>
+                <td>Forvet</td>
+                <td class="gol-sayisi">10</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Görev 1.3 - External CSS Rolünde Tablo (Futbolcular)</h2>
+    <table class="external-table">
+        <thead>
+            <tr>
+                <th>Sıra</th>
+                <th>Futbolcu Adı</th>
+                <th>Takım</th>
+                <th>Pozisyon</th>
+                <th>Gol Sayısı</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>7</td>
+                <td>Cristiano Ronaldo</td>
+                <td>Al-Nassr</td>
+                <td>Forvet</td>
+                <td class="external-gol-sayisi">18</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Neymar Jr.</td>
+                <td>Al-Hilal</td>
+                <td>Kanat</td>
+                <td class="external-gol-sayisi">5</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Luka Modrić</td>
+                <td>Real Madrid</td>
+                <td>Orta Saha</td>
+                <td class="external-gol-sayisi">1</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>Görev 2 - Üst Üste Binen Çemberler</h2>
+    <div class="circle-container">
+        <div class="circle circle-red"></div>
+        <div class="circle circle-yellow"></div>
+        <div class="circle circle-blue"></div>
+    </div>
+    
+</body>
+</html>
