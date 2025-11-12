@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Görevi 2 - Duyarlı Kartlar</title>
+    <style>
+        /* === TEMEL SAYFA STİLLERİ === */
+        body {
+            /* Daha modern bir yazı tipi kullanalım */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5; /* Hafif gri bir arka plan */
+            margin: 0;
+            padding: 24px; /* Kenarlardan boşluk */
+            color: #1c1e21;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        /* === KART KONTEYNERİ (CSS GRID) ===
+          Yönergedeki tüm gereksinimleri karşılayan ana kısım burasıdır.
+        */
+        .card-container {
+            display: grid;
+            gap: 16px; /* Kartlar arası boşluk */
+            max-width: 1200px; /* Sayfa çok genişlerse kartlar çok büyümesin */
+            margin: 0 auto; /* Konteyneri yatayda ortala */
+
+            /* 1. Xs (Varsayılan): 1 tane yan yana
+               Mobil-öncelikli (mobile-first) yaklaşımla başlıyoruz.
+               Varsayılan olarak 1 sütunlu.
+            */
+            grid-template-columns: 1fr;
+        }
+
+        /* 2. Sm (Small): 2 tane yan yana
+           Genellikle 576px ve üzeri ekranlar için kullanılır.
+        */
+        @media (min-width: 576px) {
+            .card-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 eşit sütun */
+            }
+        }
+
+        /* 3. Md (Medium): 3 tane yan yana
+           Genellikle 768px ve üzeri ekranlar için kullanılır.
+        */
+        @media (min-width: 768px) {
+            .card-container {
+                grid-template-columns: repeat(3, 1fr); /* 3 eşit sütun */
+            }
+        }
+
+        /* 4. Lg (Large): 6 tane yan yana
+           Genellikle 992px ve üzeri ekranlar için kullanılır.
+        */
+        @media (min-width: 992px) {
+            .card-container {
+                grid-template-columns: repeat(6, 1fr); /* 6 eşit sütun */
+            }
+        }
+
+        /* === BİREYSEL KART STİLLERİ === */
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #dddfe2;
+            border-radius: 8px; /* Köşeleri yuvarlatma */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* İnce bir gölge */
+            overflow: hidden; /* Resmin, kartın yuvarlak köşelerinden taşmasını engeller */
+            text-align: center;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        /* Kartın üzerine gelince hafifçe büyüme efekti */
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px; /* Tüm kart resimlerinin yüksekliği aynı olsun */
+            object-fit: cover; /* Resmin orantısını bozmadan alana sığdırır */
+            display: block; /* Resim altındaki gereksiz boşluğu kaldırır */
+        }
+
+        .card h3 {
+            color: #1d2129;
+            font-size: 1.25rem;
+            margin: 12px 0 4px 0;
+        }
+
+        .card p {
+            color: #606770; /* İkincil metin rengi */
+            font-size: 0.9rem;
+            margin: 0 0 16px 0;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Lab Görevi 2: Ünlü Futbolcular</h1>
+
+    <div class="card-container">
+        
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Lionel_Messi_20180626.jpg/800px-Lionel_Messi_20180626.jpg" alt="Lionel Messi">
+            <h3>Lionel Messi</h3>
+            <p>Forvet - Inter Miami</p>
+        </div>
+
+
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Cristiano_Ronaldo_2018.jpg/800px-Cristiano_Ronaldo_2018.jpg" alt="Cristiano Ronaldo">
+            <h3>Cristiano Ronaldo</h3>
+            <p>Forvet - Al-Nassr</p>
+        </div>
+
+        <div class="card">
+            <img src="c:\Users\Mehmet Özdoğan\Downloads\mbappe1.jpg" alt="Kylian Mbappé">
+            <h3>Kylian Mbappé</h3>
+            <p>Forvet - Real Madrid</p>
+        </div>
+
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Erling_Haaland_2023_%28cropped%29.jpg/800px-Erling_Haaland_2023_%28cropped%29.jpg" alt="Erling Haaland">
+            <h3>Erling Haaland</h3>
+            <p>Forvet - Manchester City</p>
+        </div>
+
+        <div class="card">
+            <img src="c:\Users\Mehmet Özdoğan\Downloads\1637340771113-de-bruyne.png" alt="Kevin De Bruyne">
+            <h3>Kevin De Bruyne</h3>
+            <p>Orta Saha - Manchester City</p>
+        </div>
+
+        <div class="card">
+            <img src="c:\Users\Mehmet Özdoğan\Downloads\images (2).jpeg" alt="Neymar Jr.">
+            <h3>Neymar Jr.</h3>
+            <p>Forvet - Al-Hilal</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
