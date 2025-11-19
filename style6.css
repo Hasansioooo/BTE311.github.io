@@ -1,0 +1,92 @@
+/* Genel Ayarlar */
+body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.5s ease; /* Arka plan rengi değişimi için animasyon */
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Rastgele Arka Plan Resmi Alanı */
+.random-image-container {
+    margin-bottom: 40px;
+    border: 2px solid #555;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+#random-bg-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Kontrollü Resimler Alanı */
+.image-section {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.image-box {
+    width: 30%;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.controlled-image {
+    width: 100%;
+    height: auto;
+    max-height: 200px; /* Resimlerin boyutunu sınırlamak için */
+    object-fit: cover;
+    border-radius: 5px;
+    transition: opacity 0.3s ease; /* Gösterme/Gizleme animasyonu */
+}
+
+/* Butonlar */
+.controls {
+    margin-top: 15px;
+}
+
+button {
+    padding: 8px 15px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+button:nth-child(1) { /* Göster butonu */
+    background-color: #4CAF50; /* Yeşil */
+    color: white;
+}
+
+button:nth-child(2) { /* Gizle butonu */
+    background-color: #f44336; /* Kırmızı */
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Resim Gizlendiğinde Uygulanacak Sınıf */
+.hidden {
+    opacity: 0;
+    /* display: none; kullanmak yerine opacity kullanıldı ki animasyon daha yumuşak olsun */
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Görevi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Web Lab Görevi</h1>
+    </header>
+
+    <div class="random-image-container">
+        <img id="random-bg-image" alt="Rastgele Arka Plan Resmi">
+    </div>
+
+    <main class="content-container">
+        <div class="image-section">
+            <div class="image-box">
+                <img id="img1" class="controlled-image" src="resimler/img1.jpg" alt="Resim 1">
+                <div class="controls">
+                    <button onclick="showImage('img1')">Göster</button>
+                    <button onclick="hideImage('img1')">Gizle</button>
+                </div>
+            </div>
+
+            <div class="image-box">
+                <img id="img2" class="controlled-image" src="resimler/img2.jpg" alt="Resim 2">
+                <div class="controls">
+                    <button onclick="showImage('img2')">Göster</button>
+                    <button onclick="hideImage('img2')">Gizle</button>
+                </div>
+            </div>
+
+            <div class="image-box">
+                <img id="img3" class="controlled-image" src="resimler/img3.jpg" alt="Resim 3">
+                <div class="controls">
+                    <button onclick="showImage('img3')">Göster</button>
+                    <button onclick="hideImage('img3')">Gizle</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
