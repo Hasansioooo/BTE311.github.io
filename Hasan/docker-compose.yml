@@ -1,0 +1,13 @@
+services:
+  football-app:
+    build: .
+    ports:
+      - "1024:1024"
+    environment:
+      - NODE_ENV=production
+      - REACT_APP_FOOTBALL_API_KEY=34b62a9d5df34c10bc14f9fd62acc2aa
+    volumes:
+      - .:/app
+      - /app/node_modules
+    restart: unless-stopped
+
